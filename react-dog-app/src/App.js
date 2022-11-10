@@ -6,15 +6,18 @@ import React, { useState, useEffect } from 'react'
 const App = () => {
   
   const url = "https://dog.ceo/api/breeds/list/all";
-  const [listOfBreeds, setListOfBreeds] = useState({});
+  const [listOfBreeds, setListOfBreeds] = useState([]);
 
-  const makeApiCallFunction = () => axios.get(url).then((res) =>{
-    setListOfBreeds(res.data.message);
-  })
+  const getBreeds = () => {
+  axios
+  .get(url)
+  .then(response =>(Object.entries(response.data.message)))
+  .then (response => setListOfBreeds(response))
+  };
 
   return (
     <div>
-      <BreedList list={listOfBreeds} makeApiCall={makeApiCallFunction}/>
+      <BreedList list={listOfBreeds} getBreeds={getBreeds}/>
     </div>
   )
 }
