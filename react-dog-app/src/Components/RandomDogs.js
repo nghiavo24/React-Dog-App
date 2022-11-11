@@ -20,7 +20,7 @@ const RandomDogs = ({setRandomDogBreed, getRandomDog, randomDog}) => {
                 <input type='text' placeholder="Enter the breed" onChange={handleChange} />
                 <button onClick={handleSubmit}>Get the dawg!</button>
             </div>
-            {randomDog && <img src={randomDog}></img>}
+            {randomDog && <img style={{padding: '15px'}} src={randomDog}></img>}
         </div>
     )
 
