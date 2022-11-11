@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const RandomDogs = ({setRandomDogBreed, getRandomDog, randomDog}) => {
     const[randomInput, setRandomInput] = useState("")
 
-    // Save the input for the random dog
     const handleChange = (e) => {
         setRandomInput(e.target.value)
+    
     }
 
     const handleSubmit = () => {
@@ -16,11 +16,11 @@ const RandomDogs = ({setRandomDogBreed, getRandomDog, randomDog}) => {
     return (
         <div>
             <h1>Random Dogs</h1>
-            <form>
+            <div>
                 <input type='text' placeholder="Enter the breed" onChange={handleChange} />
                 <button onClick={handleSubmit}>Get the dawg!</button>
-            </form>
-            {randomDog && <img src={randomDog}/>}
+            </div>
+            {randomDog && <img src={randomDog}></img>}
         </div>
     )
 
