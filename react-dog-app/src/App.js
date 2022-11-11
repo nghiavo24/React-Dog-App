@@ -27,7 +27,7 @@ const App = () => {
 
   useEffect(() => {
     getRandomDog();
-  }, [])
+  }, [randomDogBreed])
 
   const getRandomDog = () => {
     randomDogBreed && 
